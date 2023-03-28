@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+jwt:
+  secret: oYdmMqiysWb11whE8rNa1Uz84hB66f5i
+  expiration_time: 864000000
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/monitordb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrival=true
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa: 
+    hibernate: 
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        forma_sql: true
+
+logging:
+  level: 
+    org:
+      hibernate: 
+        sql: DEBUG
+        type: 
+          descriptor:
+            sql:
+              BasicBinder: TRACE
