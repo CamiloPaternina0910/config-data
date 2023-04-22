@@ -20,8 +20,9 @@ spring:
         - id: user-microservice
           uri: lb://user-microservice
           predicates:
-            - Path=/user/register
-            - Path=/user/my
+            - Path=/user/**
+          filters:
+            AuthFilter
         - id: jwt-microservice
           uri: lb://jtw-microservice
           predicates:
