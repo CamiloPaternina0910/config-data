@@ -10,6 +10,10 @@ eureka:
   instance:
     hostname: localhost
 
+jwt:
+  secret: oYdmMqiysWb11whE8rNa1Uz84hB66f5i
+  expiration: 864000000
+
 spring:
   cloud:
     gateway:
