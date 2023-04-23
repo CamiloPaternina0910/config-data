@@ -10,10 +10,6 @@ eureka:
   instance:
     hostname: localhost
 
-jwt:
-  secret: oYdmMqiysWb11whE8rNa1Uz84hB66f5i
-  expiration: 864000000
-
 spring:
   cloud:
     gateway:
@@ -28,6 +24,6 @@ spring:
           filters:
             AuthFilter
         - id: jwt-microservice
-          uri: lb://jtw-microservice
+          uri: lb://jwt-microservice
           predicates:
             - Path=/auth/login
