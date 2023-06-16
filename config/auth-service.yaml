@@ -39,19 +39,36 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 routes:
-  monitor:
+  roleRoutes:
     -
-      uri: /api/v1/user/
+      uri: /api/v1/user/my
       method: GET
-  teacher:
+      roles:
+        -
+          ALL
+    - uri: /api/v1/courses/course/{1}[0-9]+[0-9]*
+      method: GET
+      roles:
+        - ALL
     -
       uri: /api/v1/teacher/
       method: GET
-  council:
+      roles:
+        -
+          ROLE_TEACHER
     -
-      uri: /api/v1/council/
+      uri: /api/v1/council
       method: GET
-  public:
+      roles:
+        -
+          ROLE_COUNCIL
+    - uri: /api/v1/structural/courses?studentId={1}[0-9]+[0-9]*
+      method: GET
+      roles:
+        - ROLE_STUDENT
     -
       uri: /api/v1/login
       method: POST
+      roles:
+        -
+          PUBLIC
