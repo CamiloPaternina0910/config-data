@@ -13,14 +13,6 @@ eureka:
 spring:
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods:
-              - GET
-              - POST
-              - POST
       discovery:
         locator:
         enabled: true
