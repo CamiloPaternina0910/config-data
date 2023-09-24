@@ -10,13 +10,12 @@ eureka:
   instance:
     hostname: localhost
 
-security:
-  oauth2:
-    resourceserver:
-      jwt:
-        issuer-uri: http://localhost:9090/realms/auth-service-realm
-
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/auth-service-realm
   cloud:
     gateway:
       discovery:
