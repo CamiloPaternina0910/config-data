@@ -10,6 +10,12 @@ eureka:
   instance:
     hostname: localhost
 
+security:
+  oauth2:
+    resourceserver:
+      jwt:
+        issuer-uri: http://localhost:9090/realms/auth-service-realm
+
 spring:
   cloud:
     gateway:
@@ -21,8 +27,6 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/v1/user/**
-          filters:
-            AuthFilter
         - id: auth-service
           uri: lb://auth-service
           predicates:
