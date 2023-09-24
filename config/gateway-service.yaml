@@ -13,6 +13,14 @@ eureka:
 spring:
   security:
     oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: auth-service
+            authorization-grant-type: authorization_code
+            scope: openid
+            issuer-uri: http://localhost:9090/realms/auth-service-realm
+            user-name-attribute: preferred_username
       resourceserver:
         jwt:
           issuer-uri: http://localhost:9090/realms/auth-service-realm
