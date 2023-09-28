@@ -2,17 +2,6 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
 
 spring:
-  cloud:
-    gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedHeaders: "*"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
   security:
     oauth2:
       resourceserver:
