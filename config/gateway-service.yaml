@@ -30,6 +30,7 @@ spring:
               - POST
               - PUT
               - OPTIONS
+            allowCredentials: true
       discovery:
         locator:
         enabled: true
