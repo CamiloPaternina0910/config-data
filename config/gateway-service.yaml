@@ -39,7 +39,6 @@ spring:
             authorization-grant-type: password
             redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
             scope: "openid"
-            scope: "openid"
   cloud:
     gateway:
       globalcors:
