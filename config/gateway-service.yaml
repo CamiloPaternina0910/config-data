@@ -19,6 +19,16 @@ spring:
           jwt-set-uri: http://localhost:9090/realms/auth-service-realm/protocol/openid-connect/certs
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - OPTIONS
       discovery:
         locator:
         enabled: true
