@@ -18,13 +18,13 @@ spring:
           issuer-uri: http://localhost:9090/realms/auth-service-realm
           jwt-set-uri: http://localhost:9090/realms/auth-service-realm/protocol/openid-connect/certs
   cloud:
-    gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOrigins: "http://localhost:4200/"
-            allowedHeaders: "*"
-            allowedMethods: "*"
+#    gateway:
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "http://localhost:4200/"
+#            allowedHeaders: "*"
+#            allowedMethods: "*"
       discovery:
         locator:
         enabled: true
