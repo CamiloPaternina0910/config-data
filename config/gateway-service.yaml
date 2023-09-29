@@ -20,10 +20,11 @@ spring:
   cloud:
     gateway:
       globalcors:
-        cors-configurations:
+        corsConfigurations:
           '[/**]':
             allowedOrigins: "http://localhost:4200"
-            allowedHeaders: "*"
+            allowedHeaders:
+              - content-type
             allowedMethods:
               - GET
               - POST
@@ -41,3 +42,4 @@ spring:
           uri: lb://request-service
           predicates:
             - Path=/api/v1/request/**
+
