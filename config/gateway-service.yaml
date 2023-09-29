@@ -38,6 +38,8 @@ spring:
             client-secret: cWJag3yAN32NZ6AzKb5kqHFeEppX8wvX
             authorization-grant-type: password
             redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            scope: "openid"
+            scope: "openid"
   cloud:
     gateway:
       globalcors:
