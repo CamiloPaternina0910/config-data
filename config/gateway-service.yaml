@@ -17,6 +17,26 @@ spring:
         jwt:
           issuer-uri: http://localhost:9090/realms/auth-service-realm
           jwt-set-uri: http://localhost:9090/realms/auth-service-realm/protocol/openid-connect/certs
+      client:
+        provider:
+          keycloak:
+            token-uri: http://localhost:9090/realms/auth-service-realm/protocol/openid-connect/token
+            authorization-uri: http://localhost:9090/realms/auth-service-realm/protocol/openid-connect/auth
+            userinfo-uri: http://localhost:9090/realms/auth-service-realm/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
+        registration:
+          keycloak-with-test-scope:
+            provider: keycloak
+            client-id: auth-service
+            client-secret: cWJag3yAN32NZ6AzKb5kqHFeEppX8wvX
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+          keycloak-without-test-scope:
+            provider: keycloak
+            client-id: auth-service
+            client-secret: cWJag3yAN32NZ6AzKb5kqHFeEppX8wvX
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
   cloud:
     gateway:
       globalcors:
