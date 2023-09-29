@@ -10,6 +10,10 @@ eureka:
   instance:
     hostname: localhost
 
+keycloak-client:
+  server-url: http://localhost:4200/auth/login
+  realm: auth-service-realm
+
 spring:
   security:
     oauth2:
