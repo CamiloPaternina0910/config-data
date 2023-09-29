@@ -29,13 +29,13 @@ spring:
             provider: keycloak
             client-id: auth-service
             client-secret: cWJag3yAN32NZ6AzKb5kqHFeEppX8wvX
-            authorization-grant-type: authorization_code
+            authorization-grant-type: password
             redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
           keycloak-without-test-scope:
             provider: keycloak
             client-id: auth-service
             client-secret: cWJag3yAN32NZ6AzKb5kqHFeEppX8wvX
-            authorization-grant-type: authorization_code
+            authorization-grant-type: password
             redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
   cloud:
     gateway:
