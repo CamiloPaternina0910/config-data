@@ -2,6 +2,12 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
 
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/auth-service-realm
+          jwt-set-uri: http://localhost:9090/realms/auth-service-realm/protocol/openid-connect/certs
   datasource:
     url: jdbc:mysql://localhost/monitordb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrival=true
     username: root

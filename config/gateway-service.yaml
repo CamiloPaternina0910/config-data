@@ -57,4 +57,9 @@ spring:
           uri: lb://request-service
           predicates:
             - Path=/api/v1/request/**
+        - id: session-service
+          uri: lb://session-service
+          predicates:
+            - Path=/api/v1/session/**
+      
 
